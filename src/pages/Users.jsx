@@ -95,9 +95,9 @@ function User() {
 
   return (
     <div className="user-list p-6 font-montserrat">
+      <ToastContainer />
       <div className="flex justify-between mb-3">
         <h1 className="font-bold text-xl">Users List</h1>
-        <ToastContainer />
         <div className="flex gap-6">
           <button onClick={handleSort} className="flex items-center">
             <img src={sortIcon} alt="Sort" className="mr-1" />
@@ -109,45 +109,44 @@ function User() {
       </div>
       <hr />
       <table className="min-w-full">
-      <thead>
-        <tr className='text-xs text-gray-500' style={{ height: '40px', textAlign: 'left' }}>
-          <th style={{ width: 'auto', padding: '0' }}></th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Address</th>
-          <th>Company</th>
-          <th style={{ width: 'auto', padding: '0' }}></th>
-        </tr>
-      </thead>
-      <tbody className="text-xs font-montserrat" style={{ height: '40px', textAlign: 'left' }}>
-        {currentUsers.map((user, index) => (
-          <tr key={user.id} 
-              className={`${
-                index % 2 === 0 ? 'bg-gray-100' : 'bg-white'
-              }`} 
-              style={{ height: '70px' }} 
-          >
-            <td className="py-3">
-              <img src={samplePicture} alt="User" className="w-12 h-12 rounded-md" />
-            </td>
-            <td className="py-3">{user.name}</td>
-            <td className="py-3">{user.email}</td>
-            <td className="py-3">{user.phone}</td>
-            <td className="py-3">{`${user.address.street}, ${user.address.city}`}</td>
-            <td className="py-3">{user.company.name}</td>
-            <td className="flex flex-row gap-2 mt-5 justify-center items-center w-[100%]">
-              <button onClick={() => handleEditUser(user)}>
-                <img src={editIcon} alt="Edit" />
-              </button>
-              <button onClick={() => handleDeleteUser(user.id)} className='w-[100%]'>
-                <img src={trashIcon} alt="Delete" />
-              </button>
-            </td>
+        <thead>
+          <tr className='text-xs text-gray-500' style={{ height: '40px', textAlign: 'left' }}>
+            <th style={{ width: 'auto', padding: '0' }}></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Company</th>
+            <th style={{ width: 'auto', padding: '0' }}></th>
           </tr>
-        ))}
-      </tbody>
-
+        </thead>
+        <tbody className="text-xs font-montserrat" style={{ height: '40px', textAlign: 'left' }}>
+          {currentUsers.map((user, index) => (
+            <tr key={user.id} 
+                className={`${
+                  index % 2 === 0 ? 'bg-white rounded-lg' : 'bg-gray-50 rounded-lg'
+                }`} 
+                style={{ height: '70px' }} 
+            >
+              <td className="px-3">
+                <img src={samplePicture} alt="User" className="w-12 h-12 rounded-md" />
+              </td>
+              <td className="py-3">{user.name}</td>
+              <td className="py-3">{user.email}</td>
+              <td className="py-3">{user.phone}</td>
+              <td className="py-3">{`${user.address.street}, ${user.address.city}`}</td>
+              <td className="py-3">{user.company.name}</td>
+              <td className="flex flex-row gap-2 mt-5 justify-center items-center w-[100%]">
+                <button onClick={() => handleEditUser(user)}>
+                  <img src={editIcon} alt="Edit" height='14px'/>
+                </button>
+                <button onClick={() => handleDeleteUser(user.id)} className='w-[100%]'>
+                  <img src={trashIcon} alt="Delete" height='14px'/>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
 
       {/* Pagination controls */}

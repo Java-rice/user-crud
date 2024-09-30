@@ -23,7 +23,7 @@ const Sidebar = ({ isExpanded }) => {
     <div
       className={`sidebar font-montserrat p-4 bg-[#F2EAE1] min-h-screen transition-all duration-300 
         ${isExpanded ? 'w-1/5' : 'w-20'} 
-        md:${isExpanded ? 'w-1/5' : 'w-16'}`} // Adjust the width at medium screens
+        md:${isExpanded ? 'w-1/5' : 'w-16'}`} 
     >
       <h2 className={`border-l-4 px-4 border-[#FEAF00] font-bold text-lg ${isExpanded ? 'block' : 'hidden'}`}>
         CRUD OPERATIONS

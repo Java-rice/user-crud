@@ -25,7 +25,7 @@ const Sidebar = ({ isExpanded }) => {
         ${isExpanded ? 'w-1/5' : 'w-20'} 
         md:${isExpanded ? 'w-1/5' : 'w-16'}`} // Adjust the width at medium screens
     >
-      <h2 className={`border-l-4 px-4 border-[#FEAF00] font-bold text-lg ${isExpanded ? 'block' : 'hidden'}`}>
+      <h2 className={`border-l-4 px-4 border-[#FEAF00] font-bold text-l ${isExpanded ? 'block' : 'hidden'}`}>
         CRUD OPERATIONS
       </h2>
       <UserImage isExpanded={isExpanded} />

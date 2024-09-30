@@ -52,10 +52,10 @@ const Sidebar = ({ isExpanded }) => {
       </ul>
 
       {/* Logout Button */}
-      <div className="mt-10 px-4">
-        <button className="w-full flex items-center justify-center text-black text-sm rounded-md p-2 hover:bg-[#FEAF00] transition">
+      <div className={`mt-20 ${isExpanded ? 'px-4' : 'px-0' }`}>
+        <button className={`w-full flex items-center justify-center text-black text-sm rounded-md p-2 hover:bg-[#FEAF00] transition`}>
           {isExpanded && 'Logout'}
-          <img src={signout} alt="sign out" className={`transition-all duration-300 ${isExpanded ? 'w-4 ml-2' : 'w-4 h-4 ml-0'}`} />
+          <img src={signout} alt="sign out" className={`transition-all duration-300 ${isExpanded ? 'w-4 ml-2' : 'w-4 h-4 ml-0 mr-2'}`} />
         </button>
       </div>
     </div>

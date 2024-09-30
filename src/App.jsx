@@ -21,7 +21,7 @@ function App() {
     <Router>
       <div className="app flex flex-row min-h-screen">
         <Sidebar isExpanded={isExpanded} />
-        <div className="content w-[80%] bg-[#F8F8F8]">
+        <div className={`content w-[100%] bg-[#F8F8F8]`}>
         <Header isExpanded={isExpanded} toggleSidebar={toggleSidebar} />
           <Routes>
             <Route path="/" element={<Home />} />

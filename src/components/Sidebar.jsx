@@ -41,7 +41,7 @@ const Sidebar = ({ isExpanded }) => {
                   : 'flex items-center text-black text-sm hover:bg-[#FEAF00] hover:rounded-md px-4 py-2 transition'
               }
             >
-              <img src={icon} alt={label} className={`transition-all duration-300 ${isExpanded ? 'h-4' : 'w-4 h-4'} mr-2`} />
+              <img src={icon} alt={label} className={`transition-all duration-300 ${isExpanded ? 'h-4 ml-16' : 'w-4 h-4'} mr-2`} />
               {/* Show label only if expanded or if screen size is small */}
               <span className={`transition-all duration-300 ${isExpanded || window.innerWidth < 768 ? '' : 'hidden'}`}>
                 {label}

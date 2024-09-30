@@ -117,10 +117,10 @@ function User() {
           <th>Phone</th>
           <th>Address</th>
           <th>Company</th>
-          <th>Actions</th>
+          <th style={{ width: 'auto', padding: '0' }}></th>
         </tr>
       </thead>
-      <tbody className="text-sm font-montserrat" style={{ height: '40px', textAlign: 'left' }}>
+      <tbody className="text-xs font-montserrat" style={{ height: '40px', textAlign: 'left' }}>
         {currentUsers.map((user, index) => (
           <tr key={user.id} 
               className={`${
@@ -128,7 +128,7 @@ function User() {
               }`} 
               style={{ height: '70px' }} 
           >
-            <td>
+            <td className="py-3">
               <img src={samplePicture} alt="User" className="w-12 h-12 rounded-md" />
             </td>
             <td className="py-3">{user.name}</td>
